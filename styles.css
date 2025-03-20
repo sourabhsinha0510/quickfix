@@ -6,13 +6,33 @@ body {
 }
 
 header {
-    background-color: #0A192F; /* Dark background for contrast */;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers the company name */
+    background-color: #0A192F; /* Dark Blue */
+    padding: 15px 20px;
     color: white;
-    text-align: center;
-    padding: 15px 0;
-    font-size: 24px;
+    position: relative; /* Allows absolute positioning inside */
+    height: 80px; /* Ensures visibility */
 }
 
+.company-logo {
+    position: absolute;
+    left: 20px; /* Moves logo to the left */
+    top: 50%;
+    transform: translateY(-50%); /* Centers it vertically */
+}
+
+/* Logo Image */
+.company-logo img {
+    width: 200px; /* Adjust as needed */
+    height: auto;
+}
+
+/* Company Name and Tagline */
+.company-name {
+    text-align: center;
+}
 
 .appliance-list {
     display: flex;
