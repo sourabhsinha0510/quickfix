@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickFix Care</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="images/logo.jpg">
+</head>
+<body>
+
+    <header>
+
+        <div class="company-name">
+            <h1>QuickFix Care</h1>
+            <p>Bringing Delightful Service Everywhere</p>
+        </div>
+    </header>
+    </div>
+    <section class="appliance-list">
+        <div class="appliance" id="ac">
+            <img src="images/ac.jpg" alt="AC">
+            <h2>AC Service</h2>
+            <button onclick="openForm()" id="book">Book Service</button>
+        </div>
+        <div class="appliance" id="fridge">
+            <img src="images/fridge.jpg" alt="Fridge">
+            <h2>Fridge Service</h2>
+            <button onclick="openForm()" id="book">Book Service</button>
+        </div>
+        <div class="appliance" id="gyser">
+            <img src="images/gyser.jpg" alt="Geyser">
+            <h2>Geyser Service</h2>
+            <button onclick="openForm()" id="book">Book Service</button>
+        </div>
+        <div class="appliance" id="induction">
+            <img src="images/induction.jpg" alt="Induction">
+            <h2>Induction Service</h2>
+            <button onclick="openForm()" id="book">Book Service</button>
+        </div>
+        <div class="appliance" id="cooler">
+            <img src="images/cooler.jpg" alt="Cooler">
+            <h2>Cooler Service</h2>
+            <button onclick="openForm()" id="book">Book Service</button>
+        </div>
+        <div class="appliance" id="oven">
+            <img src="images/oven.jpg" alt="Oven">
+            <h2>Oven Service</h2>
+            <button onclick="openForm()" id="book">Book Service</button>
+        </div>
+        <div class="appliance" id="Mixer">
+            <img src="images/mixer.jpg" alt="mixer">
+            <h2>Mixer Service</h2>
+            <button onclick="openForm()" id="book">Book Service</button>
+        </div>
+        <div class="appliance" id="LED TV">
+            <img src="images/led.jpg" alt="Led">
+            <h2> TV Service</h2>
+            <button onclick="openForm()" id="book">Book Service</button>
+        </div>
+        <div class="appliance" id="LED TV">
+            <img src="images/washing.jpg" alt="washing machine">
+            <h2>washing Machine Service</h2>
+            <button onclick="openForm()" id="book">Book Service</button>
+        </div>
+        <div class="appliance" id="juicer">
+            <img src="images/juicer.jpg" alt="washing machine">
+            <h2>juicer service</h2>
+            <button onclick="openForm()" id="book">Book Service</button>
+        </div>
+        <div class="appliance" id="food processor">
+            <img src="images/food.jpg" alt="washing machine">
+            <h2>Food Processor Service</h2>
+            <button onclick="openForm()" id="book">Book Service</button>
+        </div>
+        <div class="appliance" id="toaster">
+            <img src="images/toaster.jpg" alt="washing machine">
+            <h2>Toaster Service</h2>
+            <button onclick="openForm()" id="book">Book Service</button>
+        </div>
+        <div class="appliance" id="muisc system">
+            <img src="images/speaker.jpg" alt="washing machine">
+            <h2>Music System Service</h2>
+            <button onclick="openForm()" id="book">Book Service</button>
+        </div>
+    </section>
+
+    <div class="form-popup" id="contactForm">
+        <form id="contact-form">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <input type="tel" id="phone" placeholder="Your Phone Number" required>
+            <input type="text" id="address" placeholder="Your Address" required>
+            <textarea id="message" placeholder="Your  Problem Description" required></textarea>
+            <button type="submit" class="book-service-btn">Send Message</button>
+        
+            <!-- Success and Error Messages -->
+            <p id="success-msg" style="display: none; color: green;"></p>
+            <p id="error-msg" style="display: none; color: red;"></p>
+        </form>
+        <button type="button" class="cancel" onclick="closeForm()">Close</button>        
+    </div>
+    
+    <footer>
+        <p><h3>Contact Us</h3></p>
+        <div class="contact-icons">
+            <a href="https://www.instagram.com/km_sales_jamshedpur/" target="_blank" class="contact-link">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61571559847701" target="_blank" class="contact-link">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="tel:06572290260" class="contact-link">
+                <i class="fas fa-phone"></i>
+            </a>
+            <a href="mailto:quickfixcare.service12@gmail.com" class="contact-link">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+        <p>Visit Us : Goushala Nala Rd, nr. Maliram rasan shop, Kumar Chowk, Jugsalai, Jamshedpur, Jharkhand 831006</p>
+        <p> Phone: <a href="tel: 06572290260">0657 229 0260</a></p>
+    </footer>
+
+ <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script>
+        // Function to open the contact form
+function openForm() {
+    document.getElementById("contactForm").style.display = "block";
+}
+
+// Function to close the contact form
+function closeForm() {
+    document.getElementById("contactForm").style.display = "none";
+}
+
+// Function to send email using EmailJS
+document.addEventListener("DOMContentLoaded", function () {
+    emailjs.init("IG81txZ2Mketzf8w2"); // Initialize EmailJS with your Public Key
+    document.getElementById("contact-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        // Get input values
+        let name = document.getElementById("name").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let phone = document.getElementById("phone").value.trim();
+        let address = document.getElementById("address").value.trim();
+        let message = document.getElementById("message").value.trim();
+
+        // Basic validation
+        if (!name || !email || !phone || !address || !message) {
+            document.getElementById("error-msg").innerText = "All fields are required!";
+            document.getElementById("error-msg").style.display = "block";
+            return;
+        }
+
+        // Send email using EmailJS
+        emailjs.send("service_mada5s9", "template_j21pk88", {
+            name: name,
+            email: email,
+            phone: phone,
+            address: address,
+            message: message
+        }).then(
+            function (response) {
+                console.log("SUCCESS!", response.status, response.text);
+                document.getElementById("success-msg").innerText = "Message sent successfully!";
+                document.getElementById("success-msg").style.display = "block";
+                document.getElementById("error-msg").style.display = "none";
+
+                // Clear form fields
+                document.getElementById("contact-form").reset();
+                contactForm.reset();
+            },
+            function (error) {
+                console.log("FAILED...", error);
+                document.getElementById("error-msg").innerText = "Message failed to send. Please try again.";
+                document.getElementById("error-msg").style.display = "block";
+                document.getElementById("success-msg").style.display = "none";
+                document.getElementById("contact-form").reset();
+                contactForm.reset();
+            }
+        );
+    });
+});
+
+    </script>
+</body>
+</html>

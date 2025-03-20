@@ -1,0 +1,323 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #0A192F; /* Dark background for contrast */;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 24px;
+}
+
+
+.appliance-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.appliance {
+    background: white;
+    width: 250px;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.appliance img {
+    width: 100%;
+    height: 150px;
+    border-radius: 5px;
+}
+
+.appliance h2 {
+    margin: 10px 0;
+}
+
+.appliance button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.appliance button:hover {
+    background-color: #218838;
+}
+
+.form-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container input, 
+.form-container textarea {
+    margin: 5px 0;
+    padding: 8px;
+    width: 100%;
+}
+
+.form-container button {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.form-container .cancel {
+    background: red;
+    color: white;
+}
+.logo-container {
+    width: 100%;  /* Full width */
+    text-align: center;  /* Center the image */
+    margin-top: 10px;
+}
+
+.company-logo {
+    width: 100%;  /* Make the logo take full width */
+    height: auto;  /* Maintain aspect ratio */
+    display: block;
+}
+
+
+.form-container label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.form-container input, 
+.form-container textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-container textarea {
+    height: 60px; /* Slightly larger for address & message */
+}
+footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.contact-link {
+    display: inline-block;
+    font-size: 50px; /* Increase icon size */
+    color: white;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.contact-link:hover {
+    transform: scale(1.2);
+    color: #64ffda; /* Accent color */
+}
+
+/* Centering the Contact Form */
+#contact-form {
+    max-width: 450px;
+    margin: 40px auto;
+    padding: 25px;
+    background: #0A192F; /* Primary background */
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Input Fields */
+#contact-form input,
+#contact-form textarea {  
+    width: 100%;
+    padding-left: 14px;
+    margin: 12px 0;
+    border: 2px solid #64FFDA; /* Accent color */
+    border-radius: 8px;
+    background: #E6F1FF; /* Light background */
+    font-size: 16px;
+    color: #0A192F; /* Dark text */
+    transition: border-color 0.3s ease-in-out;
+}
+
+/* Placeholder Styling */
+#contact-form input::placeholder,
+#contact-form textarea::placeholder {
+    color: #8892B0; /* Subtle text color */
+}
+
+/* Focus Effect */
+#contact-form input:focus,
+#contact-form textarea:focus {
+    border-color: #0A192F;
+    background: #ffffff;
+    outline: none;
+}
+
+/* Textarea Styling */
+#contact-form textarea {
+    height: 140px;
+    resize: none;
+}
+
+/* Submit Button */
+.book-service-btn {
+    display: inline-block;
+    padding: 14px 26px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #64FFDA; /* Accent color */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.book-service-btn:hover {
+    background-color: #0A192F; /* Primary color */
+    color: #64FFDA;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(100, 255, 218, 0.5);
+}
+
+/* Success & Error Messages */
+#success-msg, #error-msg {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 12px;
+    padding: 12px;
+    border-radius: 6px;
+}
+
+#success-msg {
+    color: #155724;
+    background: #d4edda;
+    display: none;
+}
+
+#error-msg {
+    color: #721c24;
+    background: #f8d7da;
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    #contact-form {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .book-service-btn {
+        width: 100%;
+    }
+}
+ 
+#book {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #0056b3; /* Deep Blue */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#book:hover {
+    background-color: #007BFF; /* Lighter Blue */
+    transform: scale(1.05);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+#book:active {
+    transform: scale(0.98);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.appliance {
+    position: relative;
+    overflow: hidden;
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.appliance:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Appliance Image */
+.appliance img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.appliance:hover img {
+    transform: scale(1.08);
+}
+
+/* Book Service Button */
+.appliance .book-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #0056b3; /* Deep Blue */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.appliance .book-btn:hover {
+    background-color: #007BFF; /* Lighter Blue */
+    transform: scale(1.05);
+}
