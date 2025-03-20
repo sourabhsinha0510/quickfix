@@ -5,13 +5,37 @@ body {
     padding: 0;
 }
 
-header {
-    background-color: #041e44; /* Dark background for contrast */;
-    color: white;
-    text-align: center;
-    padding: 15px 0;
-    font-size: 24px;
+/* Centering the logo in the entire page */
+.company-logo {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    background-color: #042d6a; /* Background color */
+    padding-left: 35%;
 }
+
+/* Logo Image Styling */
+.company-logo img {
+    width: 400px; /* Adjust image size */
+    height: auto;
+    max-width: 100%; /* Prevents image overflow */
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .company-logo img {
+        width: 150px; /* Smaller size for tablets */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .company-logo img {
+        width: 120px; /* Smaller size for mobile */
+    }
+}
+
 
 
 .appliance-list {
