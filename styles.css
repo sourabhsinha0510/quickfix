@@ -1,10 +1,15 @@
-body {
+html,body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Hide horizontal scroll */
 }
+* {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
 
 /* Centering the logo in the entire page */
 .company-logo {
@@ -34,6 +39,7 @@ body {
 @media screen and (max-width: 480px) {
     .company-logo img {
         width: 120px; /* Smaller size for mobile */
+        overflow-x: hidden;
     }
 }
 
@@ -86,7 +92,8 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: white;
+    background: transparent;
+    box-shadow: none;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -238,6 +245,26 @@ footer {
     transform: scale(1.1);
     box-shadow: 0 4px 15px rgba(100, 255, 218, 0.5);
 }
+/*Close button*/
+.cancel {
+    display: inline-block;
+    padding: 14px 26px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #64FFDA; /* Accent color */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.cancel:hover {
+    background-color: #0A192F; /* Primary color */
+    color: #64FFDA;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(100, 255, 218, 0.5);
+}
 
 /* Success & Error Messages */
 #success-msg, #error-msg {
@@ -345,4 +372,36 @@ footer {
 .appliance .book-btn:hover {
     background-color: #007BFF; /* Lighter Blue */
     transform: scale(1.05);
+}
+
+.contact-form-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    z-index: 1000;
+}
+
+/* Add overlay to dim the background */
+.contact-form-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* Prevent background scrolling */
+body.modal-open {
+    overflow: hidden;
 }
