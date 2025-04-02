@@ -65,7 +65,7 @@
             <button onclick="openForm()" id="book">Book Service</button>
         </div>
         <div class="appliance" id="food processor">
-            <img src="images/food.jpg" alt="washing machine">
+            <img src="images/food.png" alt="washing machine">
             <h2>Food Processor Service</h2>
             <button onclick="openForm()" id="book">Book Service</button>
         </div>
@@ -81,7 +81,7 @@
         </div>
         <div class="appliance" id="mixer jar">
             <img src="images/jar.jpg" alt="washing machine">
-            <h2> mixer jars available</h2>
+            <h2> Mixer jars available</h2>
             <button onclick="openForm()" id="book">Buy Now</button>
         </div>
     </section>
@@ -93,13 +93,15 @@
             <input type="tel" id="phone" placeholder="Your Phone Number" required>
             <input type="text" id="address" placeholder="Your Address" required>
             <textarea id="message" placeholder="Your  Problem Description" required></textarea>
-            <button type="submit" class="book-service-btn">Send Message</button>
-        
+            <button type="submit" class="book-service-btn">Confirm Service</button>
+            <br>
+            <br>
+            <button type="button" class="cancel" onclick="closeForm()">Close</button>  
             <!-- Success and Error Messages -->
             <p id="success-msg" style="display: none; color: green;"></p>
             <p id="error-msg" style="display: none; color: red;"></p>
         </form>
-        <button type="button" class="cancel" onclick="closeForm()">Close</button>        
+             
     </div>
     
     <footer>
@@ -119,20 +121,37 @@
             </a>
         </div>
         <p>Visit Us : Goushala Nala Rd, nr. Maliram rasan shop, Kumar Chowk, Jugsalai, Jamshedpur, Jharkhand 831006</p>
-        <p> Phone: <a href="tel: 06572290260">0657 229 0260</a></p>
+        <p text-color="white"> Phone: <a href="tel: 06572290260">0657 229 0260</a></p>
     </footer>
 
  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 <script>
-        // Function to open the contact form
+    function disableScroll() {
+    document.body.style.overflow = "hidden";
+    document.body.style.height = "100vh";
+}
+
+// Function to enable scrolling
+function enableScroll() {
+    document.body.style.overflow = "auto";
+    document.body.style.height = "auto";
+}
+
+// Function to open the contact form
 function openForm() {
     document.getElementById("contactForm").style.display = "block";
+    document.getElementById("formOverlay").style.display = "block";
+    document.body.style.overflow = "hidden";
+    disableScroll(); 
 }
 
 // Function to close the contact form
 function closeForm() {
     document.getElementById("contactForm").style.display = "none";
+    document.getElementById("formOverlay").style.display = "none";
+    document.body.style.overflow = "auto";
+    enableScroll();
 }
 
 // Function to send email using EmailJS
@@ -164,7 +183,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }).then(
             function (response) {
                 console.log("SUCCESS!", response.status, response.text);
-                document.getElementById("success-msg").innerText = "Message sent successfully!";
+                document.getElementById("success-msg").innerText = "Service registered successfully!";
                 document.getElementById("success-msg").style.display = "block";
                 document.getElementById("error-msg").style.display = "none";
 
@@ -174,7 +193,7 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             function (error) {
                 console.log("FAILED...", error);
-                document.getElementById("error-msg").innerText = "Message failed to send. Please try again.";
+                document.getElementById("error-msg").innerText = " failed to register service. Please try again.";
                 document.getElementById("error-msg").style.display = "block";
                 document.getElementById("success-msg").style.display = "none";
                 document.getElementById("contact-form").reset();
@@ -184,6 +203,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+document.querySelectorAll('*').forEach(el => {
+    if (el.scrollWidth > document.documentElement.clientWidth) {
+        console.log('Overflowing element:', el);
+    }
+});
+
+
     </script>
+    <div class="form-overlay" id="formOverlay" onclick="closeForm()"></div>
+
 </body>
 </html>
