@@ -12,23 +12,12 @@ html,body {
 
 
 /* Centering the logo in the entire page */
-.company-logo {
-    display: flex;
-    justify-content: center; /* Centers horizontally */
-    align-items: center; /* Centers vertically */
-    width: 100vw; /* Full viewport width */
-    height: 100vh; /* Full viewport height */
-    background-color: #042d6a; /* Background color */
-    padding-left: 35%;
+header {
+    text-align: center;
+    background: #0A192F;
+    color: #e5e9e8;
+    padding: 20px;
 }
-
-/* Logo Image Styling */
-.company-logo img {
-    width: 400px; /* Adjust image size */
-    height: auto;
-    max-width: 100%; /* Prevents image overflow */
-}
-
 /* Responsive Adjustments */
 @media screen and (max-width: 768px) {
     .company-logo img {
@@ -231,7 +220,7 @@ footer {
     padding: 14px 26px;
     font-size: 18px;
     font-weight: bold;
-    color: white;
+    color:#0A192F;
     background-color: #64FFDA; /* Accent color */
     border: none;
     border-radius: 10px;
@@ -251,7 +240,7 @@ footer {
     padding: 14px 26px;
     font-size: 18px;
     font-weight: bold;
-    color: white;
+    color:#0A192F;
     background-color: #64FFDA; /* Accent color */
     border: none;
     border-radius: 10px;
