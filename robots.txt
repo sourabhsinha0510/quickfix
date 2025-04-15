@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://quickfixcare.onrender.com/sitemap.xml
