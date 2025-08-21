@@ -50,7 +50,7 @@ function validateIndianPhoneNumber(input) {
 
 // Form Submission
 document.addEventListener("DOMContentLoaded", function () {
-    emailjs.init("IG81txZ2Mketzf8w2"); // Initialize EmailJS
+    emailjs.init("2ErU2eEH0P9YRjJMY"); // Initialize EmailJS
 
     document.getElementById("contact-form").addEventListener("submit", function (event) {
         event.preventDefault();
@@ -119,3 +119,4 @@ setTimeout(() => {
         }
     });
 }, 1000);
+
